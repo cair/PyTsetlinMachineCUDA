@@ -6,7 +6,7 @@ Using conjunctive clauses in propositional logic to represent patterns, Tsetlin 
   <img width="75%" src="https://github.com/olegranmo/blob/blob/master/MassiveParallel.png">
 </p>
 
-In the parallel and asynchronous architecture implemented here, each conjunctive clause runs in its own thread for massive parallelism. The clauses access the training examples simultaneously, updating themselves and local voting tallies in the process (exemplified in above figure).
+In the parallel and asynchronous architecture implemented here, each conjunctive clause runs in its own thread for massive parallelism. The clauses access the training examples simultaneously, updating themselves and local voting tallies in the process (see figure).
 
 A team of Tsetlin Automata, which also can run efficiently in parallel with special-purpose hardware, composes each clause. The Tsetlin Automata thus drive the entire learning process. These are rewarded/penalized according to three local rules that optimize global behaviour (see https://github.com/cair/TsetlinMachine).
 
