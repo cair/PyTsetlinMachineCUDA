@@ -1,6 +1,6 @@
 # PyTsetlinMachineCUDA - A Massively Parallel and Asynchronous Architecture for Logic-based AI 
 
-Using a linear combination of conjunctive clauses in propositional logic, Tsetlin machines (https://arxiv.org/abs/1804.01508) have obtained competitive performance in terms of accuracy, memory footprint, energy, and learning speed on diverse machine learning benchmarks (image classification, regression and natural language understanding).
+Using conjunctive clauses in propositional logic to represent patterns, Tsetlin machines (https://arxiv.org/abs/1804.01508) have obtained competitive performance in terms of accuracy, memory footprint, energy, and learning speed on diverse machine learning benchmarks (image classification, regression and natural language understanding).
 
 In the parallel and asynchronous architecture implemented here, each conjunctive clause runs in its own thread for massive parallelism. The clauses access the training examples simultanously, updating themselves and local voting tallies in the process.
 
