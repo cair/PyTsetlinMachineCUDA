@@ -16,6 +16,12 @@ There is no synchronization among the clause threads, apart from atomic adds to 
 The architecture currently supports clause weighting, classification, regression and convolution (support for local and global interpretability, Boolean embedding and multiple layers coming soon).
 </p>
 
+## Installation
+
+```bash
+pip install PyTsetlinMachineCUDA
+```
+
 ## Examples
 
 ### MNIST 2D Convolution Demo w/Weighted Clauses
