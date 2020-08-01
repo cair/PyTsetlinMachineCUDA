@@ -22,7 +22,7 @@ Coming soon.
 
 ## Requirements
 
-- Python 3.7.x, https://www.python.org/downloads/
+- Python 3.7.x, https://www.python.org/
 - Numpy, http://www.numpy.org/
 - PyCUDA, https://documen.tician.de/pycuda/
 
