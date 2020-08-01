@@ -1,6 +1,6 @@
 # PyTsetlinMachineCUDA - A Massively Parallel and Asynchronous Architecture for Logic-based AI 
 
-Using logical clauses to represent patterns, Tsetlin machines (https://arxiv.org/abs/1804.01508) have obtained competitive performance in terms of accuracy, memory footprint, energy, and learning speed on diverse benchmarks (image classification, regression and natural language understanding).
+Using logical clauses to represent patterns, Tsetlin machines (https://arxiv.org/abs/1804.01508) have obtained competitive performance in terms of accuracy, memory footprint, energy, and learning speed on several benchmarks (image classification, regression and natural language understanding).
 
 <p align="center">
   <img width="75%" src="https://github.com/olegranmo/blob/blob/master/MassiveParallel.png">
