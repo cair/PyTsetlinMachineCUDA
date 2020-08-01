@@ -12,8 +12,8 @@ X_test = np.where(X_test >= 75, 1, 0)
 
 tm = MultiClassConvolutionalTsetlinMachine2D(2000, 50*15, 5.0, (10, 10), number_of_state_bits=10, max_weight=16)
 
-print("\nAccuracy over 250 epochs:\n")
-for i in range(250):
+print("\nAccuracy over 50 epochs:\n")
+for i in range(50):
     start_training = time()
     tm.fit(X_train, Y_train, epochs=1, incremental=True)
     stop_training = time()
