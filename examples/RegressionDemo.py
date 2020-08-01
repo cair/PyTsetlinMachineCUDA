@@ -28,4 +28,4 @@ for i in range(25):
 	stop = time()
 	tm_results = np.append(tm_results, np.sqrt(((tm.predict(X_test) - Y_test)**2).mean()))
 
-	print("#%d RMSD: %.3f +/- %.2f (%.3fs)" % (i+1, tm_results.mean(), 1.96*tm_results.std()/np.sqrt(i+1), stop-start))
+	print("#%d RMSD: %.3f +/- %.3f (%.2fs)" % (i+1, tm_results.mean(), 1.96*tm_results.std()/np.sqrt(i+1), stop-start))
