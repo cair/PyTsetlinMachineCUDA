@@ -43,8 +43,8 @@ X_test = np.where(X_test >= 75, 1, 0)
 
 tm = MultiClassConvolutionalTsetlinMachine2D(2000, 50*15, 5.0, (10, 10), number_of_state_bits=10, max_weight=16)
 
-print("\nAccuracy over 250 epochs:\n")
-for i in range(250):
+print("\nAccuracy over 50 epochs:\n")
+for i in range(50):
     start_training = time()
     tm.fit(X_train, Y_train, epochs=1, incremental=True)
     stop_training = time()
@@ -61,14 +61,15 @@ for i in range(250):
 ```bash
 python ./MNISTDemo2DConvolutionWeightedClauses.py 
 
-Accuracy over 250 epochs:
+Accuracy over 50 epochs:
 
 #1 Accuracy: 97.14% Training: 13.83s Testing: 1.82s
 #2 Accuracy: 98.22% Training: 12.17s Testing: 1.39s
 #3 Accuracy: 98.57% Training: 11.88s Testing: 1.39s
 ...
-
-
+#48 Accuracy: 99.13% Training: 9.74s Testing: 1.38s
+#49 Accuracy: 99.14% Training: 9.93s Testing: 1.38s
+#50 Accuracy: 99.10% Training: 9.14s Testing: 1.38s
 ```
 ### Regression Demo
 
