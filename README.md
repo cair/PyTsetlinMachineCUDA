@@ -6,7 +6,7 @@ Using logical clauses to represent patterns, Tsetlin machines (https://arxiv.org
   <img width="75%" src="https://github.com/olegranmo/blob/blob/master/MassiveParallel.png">
 </p>
 
-In the parallel and asynchronous architecture implemented here, each clause runs in its own thread for massive parallelism. The clauses access the training examples simultaneously, updating themselves and local voting tallies in the process (see figure).
+In the parallel and asynchronous architecture implemented here, each clause runs in its own thread for massive parallelism. The clauses access the training examples simultaneously, updating themselves and local voting tallies (see figure).
 
 A team of Tsetlin Automata composes each clause. The Tsetlin Automata thus drive the entire learning process. These are rewarded/penalized according to three local rules that optimize global behaviour (see https://github.com/cair/TsetlinMachine).
 
