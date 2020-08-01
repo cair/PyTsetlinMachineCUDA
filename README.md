@@ -19,3 +19,202 @@ The architecture currently supports clause weighting, classification, regression
 ## Paper
 
 Coming soon.
+
+## Acknowledgements
+
+I thank my colleagues from the Centre for Artificial Intelligence Research (CAIR), Lei Jiao, Xuan Zhang, Geir Thore Berge, Darshana Abeyrathna, Saeed Rahimi Gorji, Sondre Glimsdal, Rupsa Saha, Bimal Bhattarai, Rohan K. Yadev, Bernt Viggo Matheussen, Morten Goodwin, Christian Omlin, Vladimir Zadorozhny (University of Pittsburgh), Jivitesh Sharma, and Ahmed Abouzeid, for their contributions to the development of the Tsetlin machine family of techniques. I would also like to thank our House of CAIR partners, Alex Yakovlev, Rishad Shafik, Adrian Wheeldon, Jie Lei, Tousif Rahman (Newcastle University), Jonny Edwards (Temporal Computing), Marco Wiering (University of Groningen), Christian D. Blakely (PwC Switzerland), Adrian Phoulady, Anders Refsdal Olsen, Halvor Smørvik, and Erik Mathisen for their many contributions.
+
+## Tsetlin Machine Papers
+
+```bash
+@article{zhang2020convergence,
+  title="{On the Convergence of Tsetlin Machines for the IDENTITY- and NOT Operators}",
+  author={Xuan Zhang and Lei Jiao and Ole-Christoffer Granmo and Morten Goodwin},
+  journal = {arXiv preprint arXiv:2007.14268}, year = {2020},
+  url = {https://arxiv.org/abs/2007.14268}
+}
+```
+
+```bash
+@article{blakely2020closedform,
+  title="{Closed-Form Expressions for Global and Local Interpretation of Tsetlin Machines with Applications to Explaining High-Dimensional Data}",
+  author={Christian D. Blakely and Ole-Christoffer Granmo},
+  journal = {arXiv preprint arXiv:2007.13885}, year = {2020},
+  url = {https://arxiv.org/abs/2007.13885}
+}
+```
+
+```bash
+@article{abeyrathna2020deterministic,
+  title="{A Novel Multi-Step Finite-State Automaton for Arbitrarily Deterministic Tsetlin Machine Learning}",
+  author={K. Darshana Abeyrathna and Ole-Christoffer Granmo and Rishad Shafik and Alex Yakovlev and Adrian Wheeldon and Jie Lei and Morten Goodwin},
+  journal = {arXiv preprint arXiv:2007.02114}, year = {2020}
+}
+```
+
+```bash
+@article{wheeldon2020learning, 
+  author={Adrian {Wheeldon} and Rishad {Shafik} and Tousif {Rahman} and Jie {Lei} and Alex {Yakovlev} and Ole-Christoffer {Granmo}}, 
+  journal={Philosophical Transactions of the Royal Society A},
+  title="{Learning Automata based Energy-efficient AI Hardware Design for IoT}",
+  year={2020}
+}
+```
+
+```bash
+@InProceedings{shafik2020explainability,
+  title="{Explainability and Dependability Analysis of Learning Automata based AI Hardware}",
+  author={Rishad {Shafik} and Adrian {Wheeldon} and Alex {Yakovlev}},
+  booktitle={IEEE 26th International Symposium on On-Line Testing and Robust System Design (IOLTS)},
+  year={2020},
+  organization={IEEE}
+}
+```
+
+```bash
+@article{lavrova2020,
+  author = {D. S. {Lavrova} and N. N. {Eliseev}},
+  title = "{Network Attacks Detection based on Tsetlin Machine}",
+  pages = {17-23},
+  journal = {Information Security Problems. Computer Systems.}, year = {2020}
+}
+```
+
+```bash
+@article{abeyrathna2020integer,
+  author = {Abeyrathna, Kuruge Darshana and Granmo, Ole-Christoffer and Goodwin, Morten},
+  title = "{Extending the Tsetlin Machine With Integer-Weighted Clauses for Increased Interpretability}",
+  journal = {arXiv preprint arXiv:2005.05131}, year = {2020}
+}
+```
+
+```bash
+@InProceedings{gorji2020indexing,
+  title="{Increasing the Inference and Learning Speed of Tsetlin Machines with Clause Indexing}",
+  author={Saeed {Gorji} and Ole Christoffer {Granmo} and Sondre {Glimsdal} and Jonathan {Edwards} and Morten {Goodwin}},
+  booktitle={International Conference on Industrial, Engineering and Other Applications of Applied Intelligent Systems},
+  year={2020},
+  organization={Springer}
+}
+```
+
+```bash
+@InProceedings{abeyrathna2020integerregression,
+  title="{A Regression Tsetlin Machine with Integer Weighted Clauses for Compact Pattern Representation,}",
+  author={Abeyrathna, Kuruge Darshana and Granmo, Ole-Christoffer and Goodwin, Morten},
+  booktitle={International Conference on Industrial, Engineering and Other Applications of Applied Intelligent Systems},
+  year={2020},
+  organization={Springer}
+}
+```
+
+```bash
+@InProceedings{phoulady2020weighted, 
+  author={Adrian {Phoulady} and Ole-Christoffer {Granmo} and Saeed Rahimi {Gorji} and Hady Ahmady {Phoulady}}, 
+  booktitle={Proceedings of the Ninth International Workshop on Statistical Relational AI (StarAI 2020)}, 
+  title="{The Weighted Tsetlin Machine: Compressed Representations with Clause Weighting}",
+  year={2020}
+}
+```
+
+```bash
+@InProceedings{wheeldon2020pervasive, 
+  author={Adrian {Wheeldon} and Rishad {Shafik} and Alex {Yakovlev} and Jonathan {Edwards} and Ibrahim {Haddadi} and Ole-Christoffer {Granmo}}, 
+  booktitle={SCONA Workshop at Design, Automation and Test in Europe (DATE 2020)}, 
+  title="{Tsetlin Machine: A New Paradigm for Pervasive AI}",
+  year={2020}
+}
+```
+
+```bash
+@article{abeyrathna2019nonlinear, 
+  author={K. Darshana {Abeyrathna} and Ole-Christoffer {Granmo} and Xuan {Zhang} and Lei {Jiao} and Morten {Goodwin}}, 
+  journal={Philosophical Transactions of the Royal Society A},
+  title="{The Regression Tsetlin Machine - A Novel Approach to Interpretable Non-Linear Regression}",
+  volume={378}, issue={2164},
+  year={2019}
+}
+```
+
+```bash
+@InProceedings{gorji2019multigranular,
+  author = {Saeed Rahimi {Gorji} and Ole-Christoffer {Granmo} and Adrian {Phoulady} and Morten {Goodwin}},
+  title = "{A Tsetlin Machine with Multigranular Clauses}",
+  booktitle="Lecture Notes in Computer Science: Proceedings of the Thirty-ninth International Conference on Innovative Techniques and Applications of Artificial Intelligence (SGAI-2019)", year="2019",
+  volume = {11927},
+  publisher="Springer International Publishing"
+}
+```
+
+```bash
+@article{berge2019text, 
+  author={Geir Thore {Berge} and Ole-Christoffer {Granmo} and Tor Oddbjørn {Tveit} and Morten {Goodwin} and Lei {Jiao} and Bernt Viggo {Matheussen}}, 
+  journal={IEEE Access}, 
+  title="{Using the Tsetlin Machine to Learn Human-Interpretable Rules for High-Accuracy Text Categorization with Medical Applications}",
+  volume={7},
+  pages={115134-115146}, 
+  year={2019}, 
+  doi={10.1109/ACCESS.2019.2935416}, 
+  ISSN={2169-3536}
+}
+```
+
+```bash
+@article{granmo2019convtsetlin,
+  author = {{Granmo}, Ole-Christoffer and {Glimsdal}, Sondre and {Jiao}, Lei and {Goodwin}, Morten and {Omlin}, Christian W. and {Berge}, Geir Thore},
+  title = "{The Convolutional Tsetlin Machine}",
+  journal = {arXiv preprint arXiv:1905.09688}, year = {2019}
+}
+```
+
+```bash
+@InProceedings{abeyrathna2019regressiontsetlin,
+  author = {{Abeyrathna}, Kuruge Darshana and {Granmo}, Ole-Christoffer and {Jiao}, Lei and {Goodwin}, Morten},
+  title = "{The Regression Tsetlin Machine: A Tsetlin Machine for Continuous Output Problems}",
+  editor="Moura Oliveira, Paulo and Novais, Paulo and Reis, Lu{\'i}s Paulo ",
+  booktitle="Progress in Artificial Intelligence", year="2019",
+  publisher="Springer International Publishing",
+  pages="268--280"
+}
+```
+
+```bash
+@InProceedings{abeyrathna2019continuousinput,
+  author = {{Abeyrathna}, Kuruge Darshana and {Granmo}, Ole-Christoffer and {Zhang}, Xuan and {Goodwin}, Morten},
+  title = "{A Scheme for Continuous Input to the Tsetlin Machine with Applications to Forecasting Disease Outbreaks}",
+  booktitle = "{Advances and Trends in Artificial Intelligence. From Theory to Practice}", year = "2019",
+  editor = "Wotawa, Franz and Friedrich, Gerhard and Pill, Ingo and Koitz-Hristov, Roxane and Ali, Moonis",
+  publisher = "Springer International Publishing",
+  pages = "564--578"
+}
+```
+
+```bash
+@article{granmo2018tsetlin,
+  author = {{Granmo}, Ole-Christoffer},
+  title = "{The Tsetlin Machine - A Game Theoretic Bandit Driven Approach to Optimal Pattern Recognition with Propositional Logic}",
+  journal = {arXiv preprint arXiv:1804.01508}, year = {2018}
+}
+```
+
+## Licence
+
+Copyright (c) 2020 Ole-Christoffer Granmo
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
