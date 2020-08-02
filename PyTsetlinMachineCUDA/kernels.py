@@ -285,7 +285,6 @@ code_evaluate = """
 				#endif
 
 				for (int e = 0; e < NUMBER_OF_EXAMPLES; ++e) {
-
 					unsigned char clause_output;
 					for (int patch = 0; patch < PATCHES; ++patch) {
 						clause_output = 1;
