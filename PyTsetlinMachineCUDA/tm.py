@@ -388,8 +388,6 @@ class RegressionTsetlinMachine(CommonTsetlinMachine):
 			self.number_of_patches = 1
 			self.number_of_ta_chunks = int((self.number_of_features-1)/32 + 1)
 
-			encoded_Y = ((Y - self.min_y)/(self.max_y - self.min_y)*self.T).astype(np.int32)
-
 			parameters = """
 #define CLASSES %d
 #define CLAUSES %d
@@ -425,6 +423,7 @@ class RegressionTsetlinMachine(CommonTsetlinMachine):
 			self.encoded_X_training_gpu = cuda.mem_alloc(int(number_of_examples * self.number_of_patches * self.number_of_ta_chunks*4))
 			self.encode_X(X, self.encoded_X_training_gpu)
 
+			encoded_Y = ((Y - self.min_y)/(self.max_y - self.min_y)*self.T).astype(np.int32)
 			self.Y_gpu = cuda.mem_alloc(encoded_Y.nbytes)
 			cuda.memcpy_htod(self.Y_gpu, encoded_Y)		
 		elif incremental == False:
