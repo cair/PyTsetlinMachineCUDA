@@ -222,6 +222,7 @@ Accuracy over 100 epochs:
 #98 Accuracy: 98.19% Training: 3.05s Testing: 0.41s
 #99 Accuracy: 98.19% Training: 3.05s Testing: 0.42s
 #100 Accuracy: 98.08% Training: 3.05s Testing: 0.42s
+```
 
 ### MNIST 2D Convolution Demo w/Weighted Clauses
 
