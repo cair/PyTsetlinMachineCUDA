@@ -453,8 +453,6 @@ class RegressionTsetlinMachine(CommonTsetlinMachine):
 			self.encoded_X_test_gpu = cuda.mem_alloc(int(number_of_examples * self.number_of_patches * self.number_of_ta_chunks*4))
 			self.encode_X(X, self.encoded_X_test_gpu)
 
-			Y = np.zeros(number_of_examples, dtype=np.int32)
-
 			parameters = """
 #define CLASSES %d
 #define CLAUSES %d
