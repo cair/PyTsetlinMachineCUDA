@@ -267,6 +267,7 @@ Accuracy over 50 epochs:
 #2 Accuracy: 98.22% Training: 12.17s Testing: 1.39s
 #3 Accuracy: 98.57% Training: 11.88s Testing: 1.39s
 ...
+
 #48 Accuracy: 99.13% Training: 9.74s Testing: 1.38s
 #49 Accuracy: 99.14% Training: 9.93s Testing: 1.38s
 #50 Accuracy: 99.10% Training: 9.14s Testing: 1.38s
