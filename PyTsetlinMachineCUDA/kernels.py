@@ -460,3 +460,64 @@ code_encode = """
 	}
 """
 
+code_transform = """
+	extern "C"
+    {
+		// Transform examples
+		__global__ void transform(unsigned int *global_ta_state, int *X, int *transformed_X)
+		{
+			int index = blockIdx.x * blockDim.x + threadIdx.x;
+			int stride = blockDim.x * gridDim.x;
+
+			for (int i = index; i < CLASSES*CLAUSES; i += stride) {
+				unsigned long long class_id = i / CLAUSES;
+				unsigned long long clause = i % CLAUSES;
+
+				unsigned int *ta_state = &global_ta_state[class_id*CLAUSES*LA_CHUNKS*STATE_BITS + clause*LA_CHUNKS*STATE_BITS];
+
+				int all_exclude = 1;
+				for (int la_chunk = 0; la_chunk < LA_CHUNKS-1; ++la_chunk) {
+					if (ta_state[la_chunk*STATE_BITS + STATE_BITS - 1] > 0) {
+						all_exclude = 0;
+						break;
+					}
+				}
+
+				if ((ta_state[(LA_CHUNKS-1)*STATE_BITS + STATE_BITS - 1] & FILTER) > 0) {
+					all_exclude = 0;
+				}
+
+				if (all_exclude) {
+					for (unsigned long long e = 0; e < NUMBER_OF_EXAMPLES; ++e) {
+						transformed_X[e*CLASSES*CLAUSES + i] = 0;
+					}
+					
+					break;
+				}
+
+				for (int e = 0; e < NUMBER_OF_EXAMPLES; ++e) {
+					unsigned char clause_output;
+					for (int patch = 0; patch < PATCHES; ++patch) {
+						clause_output = 1;
+						for (int la_chunk = 0; la_chunk < LA_CHUNKS-1; ++la_chunk) {
+							if ((ta_state[la_chunk*STATE_BITS + STATE_BITS - 1] & X[e*(LA_CHUNKS*PATCHES) + patch*LA_CHUNKS + la_chunk]) != ta_state[la_chunk*STATE_BITS + STATE_BITS - 1]) {
+								clause_output = 0;
+								break;
+							}
+						}
+
+						if ((ta_state[(LA_CHUNKS-1)*STATE_BITS + STATE_BITS - 1] & X[e*(LA_CHUNKS*PATCHES) + patch*LA_CHUNKS + LA_CHUNKS-1] & FILTER) != (ta_state[(LA_CHUNKS-1)*STATE_BITS + STATE_BITS - 1] & FILTER)) {
+							clause_output = 0;
+						}
+
+						if (clause_output) {
+							break;
+						}
+					}
+
+					transformed_X[e*CLASSES*CLAUSES + i] = clause_output;
+				}
+			}
+		}
+	}
+"""
