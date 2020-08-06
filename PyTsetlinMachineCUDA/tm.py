@@ -228,7 +228,8 @@ class MultiClassConvolutionalTsetlinMachine2D(CommonTsetlinMachine):
 				cuda.Context.synchronize()
 
 		self.ta_state = np.array([])
-
+		self.clause_weights = np.array([])
+		
 		return
 
 	def predict(self, X):
@@ -368,6 +369,7 @@ class MultiClassTsetlinMachine(CommonTsetlinMachine):
 				cuda.Context.synchronize()
 
 		self.ta_state = np.array([])
+		self.clause_weights = np.array([])
 
 		return
 
@@ -507,6 +509,7 @@ class RegressionTsetlinMachine(CommonTsetlinMachine):
 				cuda.Context.synchronize()		
 
 		self.ta_state = np.array([])
+		self.clause_weights = np.array([])
 
 		return
 
