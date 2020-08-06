@@ -195,7 +195,7 @@ class MultiClassConvolutionalTsetlinMachine2D(CommonTsetlinMachine):
 
 	#define BATCH_SIZE %d
 
-""" % (self.number_of_classes, self.number_of_clauses, self.number_of_features//2, self.number_of_state_bits, self.boost_true_positive_feedback, self.s, self.T, self.max_weight, 1, self.number_of_patches, number_of_examples, batch_size)
+""" % (self.number_of_classes, self.number_of_clauses, self.number_of_features, self.number_of_state_bits, self.boost_true_positive_feedback, self.s, self.T, self.max_weight, 1, self.number_of_patches, number_of_examples, batch_size)
 
 			mod_prepare = SourceModule(parameters + kernels.code_header + kernels.code_prepare, no_extern_c=True)
 			self.prepare = mod_prepare.get_function("prepare")
@@ -257,7 +257,7 @@ class MultiClassConvolutionalTsetlinMachine2D(CommonTsetlinMachine):
 
 #define BATCH_SIZE %d
 
-		""" % (self.number_of_classes, self.number_of_clauses, self.number_of_features//2, self.number_of_state_bits, self.boost_true_positive_feedback, self.s, self.T, 1, self.number_of_patches, number_of_examples, 100)
+		""" % (self.number_of_classes, self.number_of_clauses, self.number_of_features, self.number_of_state_bits, self.boost_true_positive_feedback, self.s, self.T, 1, self.number_of_patches, number_of_examples, 100)
 
 			mod = SourceModule(parameters + kernels.code_header + kernels.code_evaluate, no_extern_c=True)
 			self.evaluate = mod.get_function("evaluate")
@@ -336,7 +336,7 @@ class MultiClassTsetlinMachine(CommonTsetlinMachine):
 
 	#define BATCH_SIZE %d
 
-""" % (self.number_of_classes, self.number_of_clauses, self.number_of_features//2, self.number_of_state_bits, int(self.boost_true_positive_feedback), self.s, self.T, self.max_weight, 1, 1, number_of_examples, batch_size)
+""" % (self.number_of_classes, self.number_of_clauses, self.number_of_features, self.number_of_state_bits, int(self.boost_true_positive_feedback), self.s, self.T, self.max_weight, 1, 1, number_of_examples, batch_size)
 
 			mod_prepare = SourceModule(parameters + kernels.code_header + kernels.code_prepare, no_extern_c=True)
 			self.prepare = mod_prepare.get_function("prepare")
@@ -477,7 +477,7 @@ class RegressionTsetlinMachine(CommonTsetlinMachine):
 
 #define BATCH_SIZE %d
 
-""" % (1, self.number_of_clauses, self.number_of_features//2, self.number_of_state_bits, int(self.boost_true_positive_feedback), self.s, self.T, self.max_weight, 0, 1, number_of_examples, batch_size)
+""" % (1, self.number_of_clauses, self.number_of_features, self.number_of_state_bits, int(self.boost_true_positive_feedback), self.s, self.T, self.max_weight, 0, 1, number_of_examples, batch_size)
 
 			mod_prepare = SourceModule(parameters + kernels.code_header + kernels.code_prepare, no_extern_c=True)
 			self.prepare = mod_prepare.get_function("prepare")
