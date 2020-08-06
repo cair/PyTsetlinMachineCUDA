@@ -13,7 +13,7 @@ A team of Tsetlin Automata composes each clause. The Tsetlin Automata thus drive
 There is no synchronization among the clause threads, apart from atomic adds to the local voting tallies. Hence, the speed up!
 
 <p>
-The architecture currently supports clause weighting, classification, regression and convolution (support for local and global interpretability, Boolean embedding and multiple layers coming soon).
+The architecture currently supports multi-class classification, multiple layers (https://arxiv.org/abs/1804.01508), integer clause weighting (https://arxiv.org/abs/2005.05131, https://arxiv.org/abs/2002.01245), regression (https://royalsocietypublishing.org/doi/full/10.1098/rsta.2019.0165) and convolution (https://arxiv.org/abs/1905.09688). Support for local and global interpretability and Boolean embedding coming soon.
 </p>
 
 ## Installation
