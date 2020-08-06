@@ -144,10 +144,12 @@ class MultiClassConvolutionalTsetlinMachine2D(CommonTsetlinMachine):
 		self.boost_true_positive_feedback = boost_true_positive_feedback
 
 		self.append_negated = append_negated
-
+		
 		self.X_train = np.array([])
 		self.Y_train = np.array([])
 		self.X_test = np.array([])
+		self.ta_state = np.array([])
+		self.clause_weights = np.array([])
 
 		mod_encode = SourceModule(kernels.code_encode, no_extern_c=True)
 		self.prepare_encode = mod_encode.get_function("prepare_encode")
@@ -288,6 +290,8 @@ class MultiClassTsetlinMachine(CommonTsetlinMachine):
 		self.X_train = np.array([])
 		self.Y_train = np.array([])
 		self.X_test = np.array([])
+		self.ta_state = np.array([])
+		self.clause_weights = np.array([])
 
 		mod_encode = SourceModule(kernels.code_encode, no_extern_c=True)
 		self.prepare_encode = mod_encode.get_function("prepare_encode")
@@ -429,7 +433,9 @@ class RegressionTsetlinMachine(CommonTsetlinMachine):
 		self.X_train = np.array([])
 		self.Y_train = np.array([])
 		self.X_test = np.array([])
-
+		self.ta_state = np.array([])
+		self.clause_weights = np.array([])
+		
 		mod_encode = SourceModule(kernels.code_encode, no_extern_c=True)
 		self.prepare_encode = mod_encode.get_function("prepare_encode")
 		self.encode = mod_encode.get_function("encode")
