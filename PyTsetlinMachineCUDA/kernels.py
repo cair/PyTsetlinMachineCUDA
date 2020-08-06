@@ -26,11 +26,11 @@ code_header = """
 	
 	#define INT_SIZE 32
 
-	#define LA_CHUNKS (((2*FEATURES-1)/INT_SIZE + 1))
+	#define LA_CHUNKS (((FEATURES-1)/INT_SIZE + 1))
 	#define CLAUSE_CHUNKS ((CLAUSES-1)/INT_SIZE + 1)
 
-	#if ((FEATURES*2) % 32 != 0)
-	#define FILTER (~(0xffffffff << ((FEATURES*2) % INT_SIZE)))
+	#if (FEATURES % 32 != 0)
+	#define FILTER (~(0xffffffff << (FEATURES % INT_SIZE)))
 	#else
 	#define FILTER 0xffffffff
 	#endif
