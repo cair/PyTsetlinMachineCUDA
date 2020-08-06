@@ -446,22 +446,26 @@ class RegressionTsetlinMachine(CommonTsetlinMachine):
 	def fit(self, X, Y, epochs=100, incremental=False, batch_size = 100):
 		number_of_examples = X.shape[0]
 
-		self.number_of_classes = 1
-		
-		self.dim = (X.shape[1], 1, 1)
-		self.patch_dim = (X.shape[1], 1, 1)
-
-		self.max_y = np.max(Y)
-		self.min_y = np.min(Y)
-
 		if (not np.array_equal(self.X_train, X)) or (not np.array_equal(self.Y_train, Y)):
 			self.X_train = X
 			self.Y_train = Y
+			
+			self.max_y = np.max(Y)
+			self.min_y = np.min(Y)
 
-			self.number_of_features = X.shape[1]*2
+			self.number_of_classes = 1
+			
+			self.dim = (X.shape[1], 1, 1)
+			self.patch_dim = (X.shape[1], 1, 1)
+
+			if self.append_negated:
+				self.number_of_features = X.shape[1]*2
+			else:
+				self.number_of_features = X.shape[1]
+
 			self.number_of_patches = 1
 			self.number_of_ta_chunks = int((self.number_of_features-1)/32 + 1)
-
+			
 			parameters = """
 #define CLASSES %d
 #define CLAUSES %d
