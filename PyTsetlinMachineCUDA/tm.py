@@ -73,7 +73,7 @@ class CommonTsetlinMachine():
 			cuda.memcpy_dtoh(self.ta_state, self.ta_state_gpu)
 			self.clause_weights = np.empty(self.number_of_classes*self.number_of_clauses).astype(np.uint8)
 			cuda.memcpy_dtoh(self.clause_weights, self.clause_weights_gpu)
-		return((self.ta_state, self.clause_weights, self.number_of_classes, self.number_of_clauses, self.number_of_features, self.dim, self.patch_dim, self.number_of_patches, self.number_of_state_bits, self.max_weight, self.number_of_ta_chunks, self.append_negated))
+		return((self.ta_state, self.clause_weights, self.number_of_classes, self.number_of_clauses, self.number_of_features, self.dim, self.patch_dim, self.number_of_patches, self.number_of_state_bits, self.max_weight, self.number_of_ta_chunks, self.append_negated, self.min_y, self.max_y))
 
 	def set_state(self, state):
 		self.number_of_classes = state[2]
@@ -86,6 +86,8 @@ class CommonTsetlinMachine():
 		self.max_weight = state[9]
 		self.number_of_ta_chunks = state[10]
 		self.append_negated = state[11]
+		self.min_y = state[12]
+		self.max_y = state[13]
 		
 		self.ta_state_gpu = cuda.mem_alloc(self.number_of_classes*self.number_of_clauses*self.number_of_ta_chunks*self.number_of_state_bits*4)
 		self.clause_weights_gpu = cuda.mem_alloc(self.number_of_classes*self.number_of_clauses)
@@ -164,8 +166,11 @@ class MultiClassConvolutionalTsetlinMachine2D(CommonTsetlinMachine):
 		if (not np.array_equal(self.X_train, X)) or (not np.array_equal(self.Y_train, Y)):
 			self.X_train = X
 			self.Y_train = Y
-
+			
 			self.number_of_classes = int(np.max(Y) + 1)
+			
+			self.min_y = None
+			self.max_y = None
 			
 			if len(X.shape) == 3:
 				self.dim = (X.shape[1], X.shape[2],  1)
@@ -311,6 +316,9 @@ class MultiClassTsetlinMachine(CommonTsetlinMachine):
 
 			self.number_of_classes = int(np.max(Y) + 1)
 
+			self.min_y = None
+			self.max_y = None
+			
 			self.dim = (X.shape[1], 1, 1)
 			self.patch_dim = (X.shape[1], 1, 1)
 
