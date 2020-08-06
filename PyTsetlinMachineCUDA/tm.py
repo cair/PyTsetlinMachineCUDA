@@ -67,6 +67,71 @@ class CommonTsetlinMachine():
 
 		return (ta_state[mc_tm_class, clause, ta // 32, self.number_of_state_bits-1] & (1 << (ta % 32))) > 0
 
+	def get_state(self):
+		if np.array_equal(self.clause_weights, np.array([])):
+			self.ta_state = np.empty(self.number_of_classes*self.number_of_clauses*self.number_of_ta_chunks*self.number_of_state_bits).astype(np.uint32)
+			cuda.memcpy_dtoh(self.ta_state, self.ta_state_gpu)
+			self.clause_weights = np.empty(self.number_of_classes*self.number_of_clauses).astype(np.uint8)
+			cuda.memcpy_dtoh(self.clause_weights, self.clause_weights_gpu)
+		return((self.ta_state, self.clause_weights, self.number_of_classes, self.number_of_clauses, self.number_of_features, self.dim, self.number_of_patches, self.number_of_state_bits, self.T, self.s, self.max_weight, self.number_of_ta_chunks, self.append_negated))
+
+	def set_state(self, state):
+		cuda.memcpy_htod(self.ta_state_gpu, state[0])
+		cuda.memcpy_htod(self.clause_weights_gpu, state[1])
+		self.number_of_classes = state[2]
+		self.number_of_clauses = state[3]
+		self.number_of_features = state[4]
+		self.dim = state[5]
+		self.number_of_patches = state[6]
+		self.number_of_state_bits = state[7]
+		self.T = state[8]
+		self.s = state[9]
+		self.max_weight = state[10]
+		self.number_of_ta_chunks = state[11]
+		self.append_negated = state[12]
+
+		self.X_train = np.array([])
+		self.Y_train = np.array([])
+		self.X_test = np.array([])
+		self.ta_state = np.array([])
+		self.clause_weights = np.array([])
+
+	def transform(self, X):
+		number_of_examples = X.shape[0]
+		
+		encoded_X_gpu = cuda.mem_alloc(int(number_of_examples * self.number_of_patches * self.number_of_ta_chunks*4))
+		self.encode_X(X, encoded_X_gpu)
+
+		parameters = """
+#define CLASSES %d
+#define CLAUSES %d
+#define FEATURES %d
+#define STATE_BITS %d
+#define BOOST_TRUE_POSITIVE_FEEDBACK %d
+#define S %f
+#define THRESHOLD %d
+
+#define NEGATIVE_CLAUSES %d
+
+#define PATCHES %d
+
+#define NUMBER_OF_EXAMPLES %d
+
+#define BATCH_SIZE %d
+
+		""" % (self.number_of_classes, self.number_of_clauses, self.number_of_features, self.number_of_state_bits, self.boost_true_positive_feedback, self.s, self.T, 1, self.number_of_patches, number_of_examples, 100)
+
+		mod = SourceModule(parameters + kernels.code_header + kernels.code_transform, no_extern_c=True)
+		transform = mod.get_function("transform")
+
+		X_transformed_gpu = cuda.mem_alloc(number_of_examples*self.number_of_classes*self.number_of_clauses*4)
+		transform(self.ta_state_gpu, encoded_X_gpu, X_transformed_gpu, grid=(16*13,1,1), block=(128,1,1))
+		cuda.Context.synchronize()
+		X_transformed = np.ascontiguousarray(np.empty(number_of_examples*self.number_of_classes*self.number_of_clauses, dtype=np.uint32))
+		cuda.memcpy_dtoh(X_transformed, X_transformed_gpu)
+		
+		return X_transformed.reshape((number_of_examples, self.number_of_classes*self.number_of_clauses))
+	
 class MultiClassConvolutionalTsetlinMachine2D(CommonTsetlinMachine):
 	def __init__(self, number_of_clauses, T, s, patch_dim, boost_true_positive_feedback=1, number_of_state_bits=8, append_negated=True, max_weight=1):
 		self.number_of_clauses = number_of_clauses
