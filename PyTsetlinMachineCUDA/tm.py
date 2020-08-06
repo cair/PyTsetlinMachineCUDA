@@ -77,7 +77,7 @@ class CommonTsetlinMachine():
 
 	def set_state(self, state):
 		self.number_of_classes = state[2]
-		if self.number_of_clauses = state[3]
+		self.number_of_clauses = state[3]
 		self.number_of_features = state[4]
 		self.dim = state[5]
 		self.number_of_patches = state[6]
