@@ -96,6 +96,7 @@ class CommonTsetlinMachine():
 		self.ta_state = np.array([])
 		self.clause_weights = np.array([])
 
+	# Transform input data for processing at next layer
 	def transform(self, X):
 		number_of_examples = X.shape[0]
 		
