@@ -2,7 +2,7 @@ from setuptools import *
 
 setup(
    name='PyTsetlinMachineCUDA',
-   version='0.1.2',
+   version='0.1.3',
    author='Ole-Christoffer Granmo',
    author_email='ole.granmo@uia.no',
    url='https://github.com/cair/pyTsetlinMachineCUDA/',
