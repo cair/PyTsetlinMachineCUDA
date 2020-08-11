@@ -281,7 +281,10 @@ class MultiClassConvolutionalTsetlinMachine2D(CommonTsetlinMachine):
 
 	def fit(self, X, Y, epochs=100, incremental=False, batch_size = 100):
 		self.number_of_classes = int(np.max(Y) + 1)
-
+	
+		self.max_y = None
+		self.min_y = None
+		
 		encoded_Y = np.empty((Y.shape[0], self.number_of_classes), dtype = np.int32)
 		for i in range(self.number_of_classes):
 			encoded_Y[:,i] = np.where(Y == i, self.T, -self.T)
@@ -305,6 +308,9 @@ class MultiClassTsetlinMachine(CommonTsetlinMachine):
 		self.number_of_classes = int(np.max(Y) + 1)
 		self.patch_dim = (X.shape[1], 1, 1)
 
+		self.max_y = None
+		self.min_y = None
+		
 		encoded_Y = np.empty((Y.shape[0], self.number_of_classes), dtype = np.int32)
 		for i in range(self.number_of_classes):
 			encoded_Y[:,i] = np.where(Y == i, self.T, -self.T)
@@ -330,7 +336,10 @@ class TsetlinMachine(CommonTsetlinMachine):
 
 		self.number_of_classes = 1
 		self.patch_dim = (X.shape[1], 1, 1)
-
+		
+		self.max_y = None
+		self.min_y = None
+		
 		encoded_Y = np.where(Y == 1, self.T, -self.T).as_type(np.int32)
 
 		self._fit(X, encoded_Y, epochs = epochs, incremental = incremental, batch_size = batch_size)
