@@ -257,7 +257,7 @@ code_evaluate = """
 				}
 
 				if (all_exclude) {
-					break;
+					continue;
 				}
 
 				#if NEGATIVE_CLAUSES == 1
