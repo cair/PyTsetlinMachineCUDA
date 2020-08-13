@@ -6,7 +6,7 @@ import sys
 sys.path.insert(0, os.path.abspath('..'))
 
 import mock
-MOCK_MODULES = ['pycuda', 'pycuda.curandom']
+MOCK_MODULES = ['pycuda', 'pycuda.curandom', 'pycuda.driver']
 for mod_name in MOCK_MODULES:
     sys.modules[mod_name] = mock.Mock()
     
