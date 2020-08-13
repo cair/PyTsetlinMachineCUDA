@@ -1,5 +1,5 @@
 Tsetlin Machine
 ==================================
 
-.. automodule:: PyTsetlinMachineCUDA.tm
+.. autoclass:: PyTsetlinMachineCUDA:tm
    :members:
