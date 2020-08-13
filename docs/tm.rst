@@ -1,6 +1,6 @@
 Tsetlin Machine
 ==================================
 
-.. autoclass:: PyTsetlinMachineCUDA.tm.MultiClassTsetlinMachine
+.. automodule:: PyTsetlinMachineCUDA.tm
    :members:
    :undoc-members:
