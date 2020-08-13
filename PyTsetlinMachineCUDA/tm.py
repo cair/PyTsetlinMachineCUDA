@@ -275,13 +275,7 @@ class CommonTsetlinMachine():
 	
 class MultiClassConvolutionalTsetlinMachine2D(CommonTsetlinMachine):
 	"""
-	This class carries out partial least squares regression (PLSR) for two
-	arrays using NIPALS algorithm. The y array is univariate, which is why
-	PLS1 is applied.
-	PARAMETERS
-	----------
-	arrX : numpy array
-	This is X in the PLS1 model. Number and order of objects (rows) must match those of ``arrY``.
+	This class ...
 	"""
 	
 	def __init__(self, number_of_clauses, T, s, patch_dim, boost_true_positive_feedback=1, number_of_state_bits=8, append_negated=True, max_weight=1, grid=(16*13,1,1), block=(128,1,1)):
