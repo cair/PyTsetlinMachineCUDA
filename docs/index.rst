@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to the pyTsetlinMachine documentation
+Welcome to the PyTsetlinMachineCUDA documentation
 ====================================
 
 .. toctree::
@@ -11,12 +11,7 @@ Welcome to the pyTsetlinMachine documentation
    :caption: Content
 
    quickstart
-   pca
-   pcr
-   plsr
-   matrix_corr_coeff
-   utility-functions
-
+   
 Indices and tables
 ==================
 
