@@ -11,6 +11,7 @@ Welcome to the PyTsetlinMachineCUDA documentation
    :caption: Content
 
    quickstart
+   tm
    
 Indices and tables
 ==================
