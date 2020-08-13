@@ -10,6 +10,13 @@ Welcome to the pyTsetlinMachine documentation
    :maxdepth: 2
    :caption: Content
 
+   quickstart
+   pca
+   pcr
+   plsr
+   matrix_corr_coeff
+   utility-functions
+
 Indices and tables
 ==================
 
