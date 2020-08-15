@@ -492,7 +492,7 @@ code_transform = """
 						transformed_X[e*CLASSES*CLAUSES + i] = 0;
 					}
 					
-					break;
+					continue;
 				}
 
 				for (int e = 0; e < NUMBER_OF_EXAMPLES; ++e) {
