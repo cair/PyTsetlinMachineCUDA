@@ -344,7 +344,7 @@ class TsetlinMachine(CommonTsetlinMachine):
 		self.max_y = None
 		self.min_y = None
 		
-		encoded_Y = np.where(Y == 1, self.T, -self.T).as_type(np.int32)
+		encoded_Y = np.where(Y == 1, self.T, -self.T).astype(np.int32)
 
 		self._fit(X, encoded_Y, epochs = epochs, incremental = incremental, batch_size = batch_size)
 
