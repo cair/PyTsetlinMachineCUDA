@@ -222,7 +222,7 @@ class CommonTsetlinMachine():
 
 		for epoch in range(epochs):
 			for e in range(0, number_of_examples, batch_size):
-				self.update.prepared_call((16*13,1,1), (128,1,1), g.state, self.ta_state_gpu, self.clause_weights_gpu, self.class_sum_gpu, self.clause_output_gpu, self.clause_patch_gpu, self.encoded_X_training_gpu, self.Y_gpu, np.int32(e))
+				self.update.prepared_call(self.grid, self.block, g.state, self.ta_state_gpu, self.clause_weights_gpu, self.class_sum_gpu, self.clause_output_gpu, self.clause_patch_gpu, self.encoded_X_training_gpu, self.Y_gpu, np.int32(e))
 				cuda.Context.synchronize()
 
 		self.ta_state = np.array([])
