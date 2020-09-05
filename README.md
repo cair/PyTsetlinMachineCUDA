@@ -545,6 +545,24 @@ I thank my colleagues from the Centre for Artificial Intelligence Research (CAIR
 ## Tsetlin Machine Papers
 
 ```bash
+@InProceedings{saha2020causal,
+  author = {Rupsa {Saha} and Ole-Christoffer {Granmo} and Morten {Goodwin}},
+  title = "{Mining Interpretable Rules for Sentiment and Semantic Relation Analysis using Tsetlin Machines}",
+  booktitle="Lecture Notes in Computer Science: Proceedings of the 40th International Conference on Innovative Techniques and Applications of Artificial Intelligence (SGAI-2020)", year="2020",
+  publisher="Springer International Publishing"
+}
+```
+
+```bash
+@InProceedings{abeyrathna2020deterministic,
+  title="{A Novel Multi-Step Finite-State Automaton for Arbitrarily Deterministic Tsetlin Machine Learning}",
+  author={K. Darshana Abeyrathna and Ole-Christoffer Granmo and Rishad Shafik and Alex Yakovlev and Adrian Wheeldon and Jie Lei and Morten Goodwin},
+  booktitle="Lecture Notes in Computer Science: Proceedings of the 40th International Conference on Innovative Techniques and Applications of Artificial Intelligence (SGAI-2020)", year="2020",
+  publisher="Springer International Publishing"
+}
+```
+
+```bash
 @article{zhang2020convergence,
   title="{On the Convergence of Tsetlin Machines for the IDENTITY- and NOT Operators}",
   author={Xuan Zhang and Lei Jiao and Ole-Christoffer Granmo and Morten Goodwin},
@@ -559,14 +577,6 @@ I thank my colleagues from the Centre for Artificial Intelligence Research (CAIR
   author={Christian D. Blakely and Ole-Christoffer Granmo},
   journal = {arXiv preprint arXiv:2007.13885}, year = {2020},
   url = {https://arxiv.org/abs/2007.13885}
-}
-```
-
-```bash
-@article{abeyrathna2020deterministic,
-  title="{A Novel Multi-Step Finite-State Automaton for Arbitrarily Deterministic Tsetlin Machine Learning}",
-  author={K. Darshana Abeyrathna and Ole-Christoffer Granmo and Rishad Shafik and Alex Yakovlev and Adrian Wheeldon and Jie Lei and Morten Goodwin},
-  journal = {arXiv preprint arXiv:2007.02114}, year = {2020}
 }
 ```
 
@@ -712,7 +722,7 @@ I thank my colleagues from the Centre for Artificial Intelligence Research (CAIR
   author = {{Granmo}, Ole-Christoffer},
   title = "{The Tsetlin Machine - A Game Theoretic Bandit Driven Approach to Optimal Pattern Recognition with Propositional Logic}",
   journal = {arXiv preprint arXiv:1804.01508}, year = {2018},
-  url = {https://arxiv.org/abs/1804.01508}
+  url={https://arxiv.org/abs/1804.01508}
 }
 ```
 
