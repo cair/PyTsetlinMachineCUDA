@@ -555,6 +555,15 @@ I thank my colleagues from the Centre for Artificial Intelligence Research (CAIR
 ```
 
 ```bash
+@article{lei2021kws,
+  title="{Low-Power Audio Keyword Spotting using Tsetlin Machines}",
+  author={Jie Lei and Tousif Rahman and Rishad Shafik and Adrian Wheeldon and Alex Yakovlev and Ole-Christoffer Granmo and Fahim Kawsar and Akhil Mathur},
+  journal = {arXiv preprint arXiv:2101.11336}, year = {2021},
+  url = {https://arxiv.org/abs/2101.11336}
+}
+```
+
+```bash
 @InProceedings{yadav2021wordsense,
   title="{Interpretable Classification of Word Sense Disambiguation Using Tsetlin Machine}",
   author={Rohan Kumar {Yadav} and Lei {Jiao} and Ole-Christoffer {Granmo} and Morten {Goodwin}},
@@ -588,7 +597,9 @@ I thank my colleagues from the Centre for Artificial Intelligence Research (CAIR
 @article{abeyrathna2021integer,
   author = {Abeyrathna, Kuruge Darshana and Granmo, Ole-Christoffer and Goodwin, Morten},
   title = "{Extending the Tsetlin Machine With Integer-Weighted Clauses for Increased Interpretability}",
-  journal = {IEEE Access}, year = {2021}
+  journal = {IEEE Access},
+  volume = 9,
+  year = {2021}
 }
 ```
 
