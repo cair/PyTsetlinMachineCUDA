@@ -1,23 +1,12 @@
 # PyTsetlinMachineCUDA - Massively Parallel and Asynchronous Architecture for Logic-based AI 
 
-Using logical clauses to represent patterns, Tsetlin machines (https://arxiv.org/abs/1804.01508) have obtained competitive performance in terms of accuracy, memory footprint, energy, and learning speed on several benchmarks (image classification, regression and natural language understanding).
-
 <p align="center">
   <img width="75%" src="https://github.com/olegranmo/blob/blob/master/MassiveParallel.png">
 </p>
 
-In the parallel and asynchronous architecture implemented here, each clause runs in its own thread for massive parallelism. The clauses access the training examples simultaneously, updating themselves and local voting tallies in parallel (see figure).
-
-A team of Tsetlin Automata composes each clause. The Tsetlin Automata thus drive the entire learning process. These are rewarded/penalized according to three local rules that optimize global behaviour (see https://github.com/cair/TsetlinMachine).
-
-There is no synchronization among the clause threads, apart from atomic adds to the local voting tallies. Hence, the speed up!
-
-<p>
-The architecture currently supports multi-class classification, multiple layers (https://arxiv.org/abs/1804.01508), integer clause weighting (https://arxiv.org/abs/2005.05131, https://arxiv.org/abs/2002.01245), regression (https://royalsocietypublishing.org/doi/full/10.1098/rsta.2019.0165) and convolution (https://arxiv.org/abs/1905.09688). Support for local and global interpretability and Boolean embedding coming soon.
-</p>
-
 ## Contents
 
+- [Overview] (#overview)
 - [Installation](#installation)
 - [Examples](#examples)
   - [Multiclass Demo](#multiclass-demo)
@@ -36,6 +25,19 @@ The architecture currently supports multi-class classification, multiple layers 
 - [Tsetlin Machine Papers](#tsetlin-machine-papers)
 - [Licence](#licence)
 
+## Overview
+
+Using logical clauses to represent patterns, Tsetlin machines (https://arxiv.org/abs/1804.01508) have obtained competitive performance in terms of accuracy, memory footprint, energy, and learning speed on several benchmarks (image classification, regression and natural language understanding).
+
+In the parallel and asynchronous architecture implemented here, each clause runs in its own thread for massive parallelism. The clauses access the training examples simultaneously, updating themselves and local voting tallies in parallel (see figure).
+
+A team of Tsetlin Automata composes each clause. The Tsetlin Automata thus drive the entire learning process. These are rewarded/penalized according to three local rules that optimize global behaviour (see https://github.com/cair/TsetlinMachine).
+
+There is no synchronization among the clause threads, apart from atomic adds to the local voting tallies. Hence, the speed up!
+
+<p>
+The architecture currently supports multi-class classification, multiple layers (https://arxiv.org/abs/1804.01508), integer clause weighting (https://arxiv.org/abs/2005.05131, https://arxiv.org/abs/2002.01245), regression (https://royalsocietypublishing.org/doi/full/10.1098/rsta.2019.0165) and convolution (https://arxiv.org/abs/1905.09688). Support for local and global interpretability and Boolean embedding coming soon.
+</p>
 
 ## Installation
 
