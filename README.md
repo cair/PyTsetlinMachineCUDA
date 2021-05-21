@@ -6,7 +6,7 @@
 
 ## Contents
 
-- [Overview] (#overview)
+- [Overview](#overview)
 - [Installation](#installation)
 - [Examples](#examples)
   - [Multiclass Demo](#multiclass-demo)
