@@ -11,9 +11,6 @@
 - [Examples](#examples)
   - [Multiclass Demo](#multiclass-demo)
   - [Interpretability Demo](#interpretability-demo)
-  - [2D Convolution Demo](#2d-convolution-demo)
-  - [Continuous Input Demo](#continuous-input-demo)
-  - [MNIST Demo](#mnist-demo)
   - [MNIST Demo w/Weighted Clauses](#mnist-demo-wweighted-clauses)
   - [MNIST 2D Convolution Demo w/Weighted Clauses](#mnist-2d-convolution-demo-wweighted-clauses)
   - [Fashion MNIST 2D Convolution Demo w/Weighted Clauses](#fashion-mnist-2d-convolution-demo-wweighted-clauses)
@@ -46,6 +43,8 @@ pip install PyTsetlinMachineCUDA
 ```
 
 ## Examples
+
+### Multiclass Demo
 
 #### Code: NoisyXORDemo.py
 
