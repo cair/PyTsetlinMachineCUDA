@@ -16,6 +16,27 @@ There is no synchronization among the clause threads, apart from atomic adds to 
 The architecture currently supports multi-class classification, multiple layers (https://arxiv.org/abs/1804.01508), integer clause weighting (https://arxiv.org/abs/2005.05131, https://arxiv.org/abs/2002.01245), regression (https://royalsocietypublishing.org/doi/full/10.1098/rsta.2019.0165) and convolution (https://arxiv.org/abs/1905.09688). Support for local and global interpretability and Boolean embedding coming soon.
 </p>
 
+## Contents
+
+- [Installation](#installation)
+- [Examples](#examples)
+  - [Multiclass Demo](#multiclass-demo)
+  - [Interpretability Demo](#interpretability-demo)
+  - [2D Convolution Demo](#2d-convolution-demo)
+  - [Continuous Input Demo](#continuous-input-demo)
+  - [MNIST Demo](#mnist-demo)
+  - [MNIST Demo w/Weighted Clauses](#mnist-demo-wweighted-clauses)
+  - [MNIST 2D Convolution Demo w/Weighted Clauses](#mnist-2d-convolution-demo-wweighted-clauses)
+  - [Fashion MNIST 2D Convolution Demo w/Weighted Clauses](#fashion-mnist-2d-convolution-demo-wweighted-clauses)
+  - [IMDb Text Categorization Demo](#imdb-text-categorization-demo)
+  - [Regression Demo](#regression-demo)
+- [Paper](#paper)
+- [Requirements](#requirements)
+- [Acknowledgements](#acknowledgements)
+- [Tsetlin Machine Papers](#tsetlin-machine-papers)
+- [Licence](#licence)
+
+
 ## Installation
 
 ```bash
