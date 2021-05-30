@@ -1,4 +1,5 @@
 # PyTsetlinMachineCUDA - Massively Parallel and Asynchronous Architecture for Logic-based AI 
+![License](https://img.shields.io/github/license/microsoft/interpret.svg?style=flat-square) ![Python Version](https://img.shields.io/pypi/pyversions/interpret.svg?style=flat-square)![Maintenance](https://img.shields.io/maintenance/yes/2021?style=flat-square)
 
 ## Contents
 
