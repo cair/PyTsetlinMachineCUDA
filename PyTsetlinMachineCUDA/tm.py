@@ -64,6 +64,26 @@ class CommonTsetlinMachine():
 		state['clause_weights'] = np.empty(self.number_of_classes*self.number_of_clauses).astype(np.uint8)
 		cuda.memcpy_dtoh(state['clause_weights'], self.clause_weights_gpu)
 		
+		if 'X_train' in state:
+			del state['X_train']
+
+		if 'X_test' in state:
+			del state['X_test']
+
+		if 'prepare_encode' in state:
+			del state['prepare_encode']
+			del state['prepare']
+			del state['encode']
+			del state['ta_state_gpu']
+			del state['clause_weights_gpu']
+			del state['clause_output_gpu']
+			del state['clause_sum_gpu']
+			del state['Y_gpu']
+
+		if 'encode_Y_train' in state:
+			del state['encode_Y_train']
+			del state['encoded_X_training_gpu']
+
 		print(state.keys())
 		xxx
 		return state
