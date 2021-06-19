@@ -59,10 +59,10 @@ class CommonTsetlinMachine():
 
 	def __getstate__(self):
 		state = self.__dict__.copy()
-		state.ta_state = np.empty(self.number_of_classes*self.number_of_clauses*self.number_of_ta_chunks*self.number_of_state_bits).astype(np.uint32)
-		cuda.memcpy_dtoh(state.ta_state, self.ta_state_gpu)
-		state.clause_weights = np.empty(self.number_of_classes*self.number_of_clauses).astype(np.uint8)
-		cuda.memcpy_dtoh(sate.clause_weights, self.clause_weights_gpu)
+		state['ta_state'] = np.empty(self.number_of_classes*self.number_of_clauses*self.number_of_ta_chunks*self.number_of_state_bits).astype(np.uint32)
+		cuda.memcpy_dtoh(state['ta_state'], self.ta_state_gpu)
+		state['clause_weights'] = np.empty(self.number_of_classes*self.number_of_clauses).astype(np.uint8)
+		cuda.memcpy_dtoh(state['clause_weights'], self.clause_weights_gpu)
 		
 		print(state.keys())
 		xxx
