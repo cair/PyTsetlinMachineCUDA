@@ -57,6 +57,22 @@ class CommonTsetlinMachine():
 		self.prepare_encode = mod_encode.get_function("prepare_encode")
 		self.encode = mod_encode.get_function("encode")
 
+	def __getstate__(self):
+		state = self.__dict__.copy()
+		state.ta_state = np.empty(self.number_of_classes*self.number_of_clauses*self.number_of_ta_chunks*self.number_of_state_bits).astype(np.uint32)
+		cuda.memcpy_dtoh(state.ta_state, self.ta_state_gpu)
+		state.clause_weights = np.empty(self.number_of_classes*self.number_of_clauses).astype(np.uint8)
+		cuda.memcpy_dtoh(sate.clause_weights, self.clause_weights_gpu)
+		
+		print(state.keys())
+		xxx
+		return state
+
+	def __setstate__(self, state):
+		self.__dict__.update(state)
+		self.mc_ctm = _lib.CreateMultiClassTsetlinMachine(self.number_of_classes, self.number_of_clauses, self.number_of_features, self.number_of_patches, self.number_of_ta_chunks, self.number_of_state_bits, self.T, self.s, self.s_range, self.boost_true_positive_feedback, self.weighted_clauses, self.clause_drop_p, self.literal_drop_p)
+		self.set_state(state['mc_ctm_state'])
+
 	def encode_X(self, X, encoded_X_gpu):
 		number_of_examples = X.shape[0]
 
@@ -89,11 +105,11 @@ class CommonTsetlinMachine():
 		return (ta_state[mc_tm_class, clause, ta // 32, self.number_of_state_bits-1] & (1 << (ta % 32))) > 0
 
 	def get_state(self):
-		if np.array_equal(self.clause_weights, np.array([])):
-			self.ta_state = np.empty(self.number_of_classes*self.number_of_clauses*self.number_of_ta_chunks*self.number_of_state_bits).astype(np.uint32)
-			cuda.memcpy_dtoh(self.ta_state, self.ta_state_gpu)
-			self.clause_weights = np.empty(self.number_of_classes*self.number_of_clauses).astype(np.uint8)
-			cuda.memcpy_dtoh(self.clause_weights, self.clause_weights_gpu)
+		self.ta_state = np.empty(self.number_of_classes*self.number_of_clauses*self.number_of_ta_chunks*self.number_of_state_bits).astype(np.uint32)
+		cuda.memcpy_dtoh(self.ta_state, self.ta_state_gpu)
+		self.clause_weights = np.empty(self.number_of_classes*self.number_of_clauses).astype(np.uint8)
+		cuda.memcpy_dtoh(self.clause_weights, self.clause_weights_gpu)
+
 		return((self.ta_state, self.clause_weights, self.number_of_classes, self.number_of_clauses, self.number_of_features, self.dim, self.patch_dim, self.number_of_patches, self.number_of_state_bits, self.max_weight, self.number_of_ta_chunks, self.append_negated, self.min_y, self.max_y))
 
 	def set_state(self, state):
