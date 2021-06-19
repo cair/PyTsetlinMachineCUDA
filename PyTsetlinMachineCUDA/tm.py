@@ -67,6 +67,9 @@ class CommonTsetlinMachine():
 		if 'X_train' in state:
 			del state['X_train']
 			del state['Y_train']
+			del state['encoded_Y_train']
+			del state['encoded_X_training_gpu']
+			del state['update']
 
 		if 'X_test' in state:
 			del state['X_test']
@@ -79,11 +82,7 @@ class CommonTsetlinMachine():
 			del state['clause_weights_gpu']
 			del state['clause_output_gpu']
 			del state['class_sum_gpu']
-			del state['Y_gpu']
-
-		if 'encoded_Y_train' in state:
-			del state['encoded_Y_train']
-			del state['encoded_X_training_gpu']
+			del state['Y_gpu']			
 
 		print(state.keys())
 		xxx
