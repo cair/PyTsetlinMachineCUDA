@@ -66,6 +66,7 @@ class CommonTsetlinMachine():
 		
 		if 'X_train' in state:
 			del state['X_train']
+			del state['Y_train']
 
 		if 'X_test' in state:
 			del state['X_test']
