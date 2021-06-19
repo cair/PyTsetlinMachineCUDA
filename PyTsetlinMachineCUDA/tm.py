@@ -77,7 +77,7 @@ class CommonTsetlinMachine():
 			del state['ta_state_gpu']
 			del state['clause_weights_gpu']
 			del state['clause_output_gpu']
-			del state['clause_sum_gpu']
+			del state['class_sum_gpu']
 			del state['Y_gpu']
 
 		if 'encode_Y_train' in state:
