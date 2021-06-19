@@ -76,6 +76,8 @@ class CommonTsetlinMachine():
 
 		if 'encoded_X_test_gpu' in state:
 			del state['encoded_X_test_gpu']
+
+		if 'evaluate' in state:
 			del state['evaluate']
 
 		if 'prepare_encode' in state:
