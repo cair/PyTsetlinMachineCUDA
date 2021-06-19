@@ -86,14 +86,12 @@ class CommonTsetlinMachine():
 			del state['class_sum_gpu']
 			del state['Y_gpu']			
 
-		print(state.keys())
-		xxx
 		return state
 
 	def __setstate__(self, state):
 		self.__dict__.update(state)
-		self.mc_ctm = _lib.CreateMultiClassTsetlinMachine(self.number_of_classes, self.number_of_clauses, self.number_of_features, self.number_of_patches, self.number_of_ta_chunks, self.number_of_state_bits, self.T, self.s, self.s_range, self.boost_true_positive_feedback, self.weighted_clauses, self.clause_drop_p, self.literal_drop_p)
-		self.set_state(state['mc_ctm_state'])
+		self.set_state((self.ta_state, self.clause_weights, self.number_of_classes, self.number_of_clauses, self.number_of_features, self.dim, self.patch_dim, self.number_of_patches, self.number_of_state_bits, self.max_weight, self.number_of_ta_chunks, self.append_negated, self.min_y, self.max_y))
+		
 
 	def encode_X(self, X, encoded_X_gpu):
 		number_of_examples = X.shape[0]
