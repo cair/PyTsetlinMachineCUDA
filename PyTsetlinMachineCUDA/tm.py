@@ -94,8 +94,18 @@ class CommonTsetlinMachine():
 
 	def __setstate__(self, state):
 		self.__dict__.update(state)
-		self.set_state((self.ta_state, self.clause_weights, self.number_of_classes, self.number_of_clauses, self.number_of_features, self.dim, self.patch_dim, self.number_of_patches, self.number_of_state_bits, self.max_weight, self.number_of_ta_chunks, self.append_negated, self.min_y, self.max_y))
+		self.X_train = np.array([])
+		self.Y_train = np.array([])
+		self.X_test = np.array([])
+
+		mod_encode = SourceModule(kernels.code_encode, no_extern_c=True)
+		self.prepare_encode = mod_encode.get_function("prepare_encode")
+		self.encode = mod_encode.get_function("encode")
 		
+		self.ta_state_gpu = cuda.mem_alloc(self.number_of_classes*self.number_of_clauses*self.number_of_ta_chunks*self.number_of_state_bits*4)
+		self.clause_weights_gpu = cuda.mem_alloc(self.number_of_classes*self.number_of_clauses)
+		cuda.memcpy_htod(self.ta_state_gpu, self.ta_state)
+		cuda.memcpy_htod(self.clause_weights_gpu, self.clause_weights)
 
 	def encode_X(self, X, encoded_X_gpu):
 		number_of_examples = X.shape[0]
