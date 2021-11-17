@@ -553,7 +553,7 @@ RMSD over 25 runs:
 
 ## Paper
 
-K. Darshana Abeyrathna, Bimal Bhattarai, Morten Goodwin, Saeed Gorji, Ole-Christoffer Granmo, Lei Jiao, Rupsa Saha, and Rohan K. Yadav (2021). Massively Parallel and Asynchronous Tsetlin Machine Architecture Supporting Almost Constant-Time Scaling. ICML 2021 (https://arxiv.org/abs/2009.04861).
+K. Darshana Abeyrathna, Bimal Bhattarai, Morten Goodwin, Saeed Gorji, Ole-Christoffer Granmo, Lei Jiao, Rupsa Saha, and Rohan K. Yadav (2021). Massively Parallel and Asynchronous Tsetlin Machine Architecture Supporting Almost Constant-Time Scaling. ICML 2021 (https://proceedings.mlr.press/v139/abeyrathna21a.html).
 
 ## Requirements
 
