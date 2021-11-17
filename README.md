@@ -568,6 +568,45 @@ I thank my colleagues from the Centre for Artificial Intelligence Research (CAIR
 ## Tsetlin Machine Papers
 
 ```bash
+@article{saha2021disc,
+  author = {Saha, Rupsa and Granmo, Ole-Christoffer and Goodwin, Morten},
+  title = {Using Tsetlin Machine to discover interpretable rules in natural language processing applications},
+  journal = {Expert Systems},
+  url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/exsy.12873},
+  year={2021}
+}
+```
+
+```bash
+@article{abeyrathna2021multistep,
+  author = {Abeyrathna, Kuruge Darshana and Granmo, Ole-Christoffer and Shafik, Rishad and Jiao, Lei and Wheeldon, Adrian and Yakovlev, Alex and Lei, Jie and Goodwin, Morten},
+  title = {A multi-step finite-state automaton for arbitrarily deterministic Tsetlin Machine learning},
+  journal = {Expert Systems},
+  url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/exsy.12836},
+  year={2021}
+}
+```
+
+```bash
+@InProceedings{yadav2021dwr,
+  title={Enhancing Interpretable Clauses Semantically using Pretrained Word Representation},
+  author={Rohan Kumar Yadav and Lei Jiao and Ole-Christoffer Granmo and Morten Goodwin},
+  booktitle={BLACKBOXNLP},
+  url = {https://aclanthology.org/2021.blackboxnlp-1.19.pdf},
+  year={2021}
+}
+```
+
+```bash
+@article{jiao2021andorconvergence,
+  title={On the Convergence of Tsetlin Machines for the AND and the OR Operators},
+  author={Lei Jiao and Xuan Zhang and Ole-Christoffer Granmo},
+  journal = {arXiv preprint arXiv:2109.09488}, year = {2021},
+  url = {https://arxiv.org/abs/2109.09488}
+}
+```
+
+```bash
 @InProceedings{wheeldon2021self,
   title="{Self-Timed Reinforcement Learning using Tsetlin Machine}",
   author={Adrian Wheeldon and Alex Yakovlev and Rishad Shafik},
@@ -646,15 +685,6 @@ I thank my colleagues from the Centre for Artificial Intelligence Research (CAIR
   author={Bimal Bhattarai and Ole-Christoffer Granmo and Lei Jiao},
   journal = {arXiv preprint arXiv:2105.04708}, year = {2021},
   url = {https://arxiv.org/abs/2105.04708}
-}
-```
-
-```bash
-@article{yadav2021dwr,
-  title="{Distributed Word Representation in Tsetlin Machine}",
-  author={Rohan Kumar Yadav and Lei Jiao and Ole-Christoffer Granmo and Morten Goodwin},
-  journal = {arXiv preprint arXiv:2104.06901}, year = {2021},
-  url = {https://arxiv.org/abs/2104.06901}
 }
 ```
 
