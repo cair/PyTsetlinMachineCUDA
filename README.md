@@ -37,7 +37,7 @@ There is no synchronization among the clause threads, apart from atomic adds to 
 The architecture currently supports multi-class classification, multiple layers (https://arxiv.org/abs/1804.01508), integer clause weighting (https://arxiv.org/abs/2005.05131, https://arxiv.org/abs/2002.01245), regression (https://royalsocietypublishing.org/doi/full/10.1098/rsta.2019.0165) and convolution (https://arxiv.org/abs/1905.09688). Support for local and global interpretability and Boolean embedding coming soon.
 </p>
 
-## Installation
+## Installation 
 
 ```bash
 pip install PyTsetlinMachineCUDA
@@ -743,7 +743,7 @@ I thank my colleagues from the Centre for Artificial Intelligence Research (CAIR
 @article{saha2021relational,
   title="{A Relational Tsetlin Machine with Applications to Natural Language Understanding}",
   author={Rupsa Saha and Ole-Christoffer Granmo and Vladimir I. Zadorozhny and Morten Goodwin},
-  journal = {arXiv preprint arXiv:2102.10952}, year = {2021},
+  journal = {Journal of Intelligent Information Systems}, year = {2022},
   url = {https://arxiv.org/abs/2102.10952}
 }
 ```
