@@ -529,7 +529,7 @@ for i in range(25):
 	X_train, X_test, Y_train, Y_test = train_test_split(X_transformed, Y)
 
 	start = time()
-	tm.fit(X_train, Y_train, epochs=100, incremental=True)
+	tm.fit(X_train, Y_train, epochs=100, incremental=False)
 	stop = time()
 	tm_results = np.append(tm_results, np.sqrt(((tm.predict(X_test) - Y_test)**2).mean()))
 
@@ -543,12 +543,8 @@ python3 ./RegressionDemo.py
 
 RMSD over 25 runs:
 
-#1 RMSD: 0.501 +/- 0.000 (12.96s)
-#2 RMSD: 0.497 +/- 0.005 (12.90s)
 ...
 
-#24 RMSD: 0.497 +/- 0.003 (12.91s)
-#25 RMSD: 0.497 +/- 0.003 (12.95s)
 ```
 
 ## Paper
